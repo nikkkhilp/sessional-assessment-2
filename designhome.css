@@ -152,6 +152,12 @@ html{
     align-items: center;
 }
 
+#list{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .client-item{
     padding: 34px;
 }
@@ -222,11 +228,11 @@ footer{
 .btn{
     padding: 6px 20px;
     border: 2px solid white;
-    background-color: brown;
+    background-color: rgb(246, 6, 6);
     color: white;
     margin: 17px;
     font-size: 1.5rem;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor:pointer;
 }
 
