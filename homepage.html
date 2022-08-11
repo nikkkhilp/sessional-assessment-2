@@ -65,6 +65,16 @@
         </div>
     </section>
 
+
+
+    <!-- creating result section  -->
+    <section id="client-section">
+        <h1 class="h-primary center">Here is your employee data !</h1>
+        
+        </div>
+
+    </section>
+
     
 
     <!-- creating the contactMe section -->
@@ -136,7 +146,7 @@
             const obj = JSON.parse(this.responseText);
             console.log(obj);
             const list = document.getElementById('list');
-            str = "";
+            str = " ";
             for (key in obj)
             {
                 str += `<li>${obj[key].employee_name} </li>`;
