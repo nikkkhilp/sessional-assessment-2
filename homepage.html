@@ -7,8 +7,8 @@
     <title>Person Management System</title>
     <link rel="stylesheet" href="/designhome.css">
     <link rel="stylesheet" media="screen and (max-width: 1170px)" href="/responsive.css">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
-    <script src ="/brainbehind.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">  
+   
 </head>
 <body>
     
@@ -99,6 +99,42 @@
             Copyright &copy; www.nikhilpal.com. All rights reserved!
         </div>
     </footer>
+    
+    <script>
+        const popBtn = document.getElementById('popBtn');
+        popBtn.addEventListener('click', popHandler);
 
+        function popHandler() {
+            alert('Called');
+            // Instantiate an xhr object
+    const xhr = new XMLHttpRequest();
+
+    // Open the object
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/users?utm_source=Mailerlite&utm_medium=E-mail&utm_campaign=Test%20Series&utm_term=2022-08-09', true);
+
+
+    // What to do when response is ready
+    xhr.onload = function () {
+        if(this.status === 200){
+            const obj = JSON.parse(this.responseText);
+            console.log(obj);
+            const list = document.getElementById('list');
+            str = "";
+            for (key in obj)
+            {
+                str += `<li>${obj[key].employee_name} </li>`;
+            }
+            list.innerHTML = str;
+        }
+        else{
+            console.log("Some error occured")
+        }
+    }
+
+    // send the request
+    xhr.send();
+            
+        }
+    </script>
 </body>
 </html>
