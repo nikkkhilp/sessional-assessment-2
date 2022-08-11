@@ -30,7 +30,7 @@
         <h1 class="h-primary">Person Management System</h1>
         <p>This project fetches employee us data from an API and presents us the data in the UI using</p>
         <p>HTML, CSS, Javascript, AJAX.</p>
-        <button class="btn" id="popBtn">Fetch Details</button>
+        <button class="btn" id="popBtn"><a href = #client-section>Fetch Details</a></button>
     </section>
 
     <!-- creating the tech used  -->
@@ -72,7 +72,7 @@
         <h1 class="h-primary center">Here is your employee data !</h1>
         <div>
             <ul id ="list">
-                
+
             </ul>
         </div>
 
@@ -135,7 +135,7 @@
         popBtn.addEventListener('click', popHandler);
 
         function popHandler() {
-            alert('Called');
+            
             // Instantiate an xhr object
     const xhr = new XMLHttpRequest();
 
@@ -147,12 +147,12 @@
     xhr.onload = function () {
         if(this.status === 200){
             const obj = JSON.parse(this.responseText);
-            console.log(obj);
+            // document.write(this.responseText);
             const list = document.getElementById('list');
             str = " ";
             for (key in obj)
             {
-                str += `<li>${obj[key].employee_name} </li>`;
+                str += `<li>${obj[key].name}</li>`;
             }
             list.innerHTML = str;
         }
