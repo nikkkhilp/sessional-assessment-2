@@ -149,6 +149,10 @@ html{
     align-items: center;
 }
 
+#list{
+    text-align: center;
+}
+
 .client-item{
     padding: 34px;
 }
