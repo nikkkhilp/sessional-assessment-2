@@ -1,22 +1,36 @@
-let fetchBtn = document.getElementById('fetchBtn');
-fetchBtn.addEventListener('click', buttonClickHandler);
+let popBtn = document.getElementById('popBtn');
+popBtn.addEventListener('click', popHandler);
 
-function buttonClickHandler(){
-    console.log('You have clicked the button.');
+function popHandler() {
+    console.log('You have clicked the pop handler');
+
+    // Instantiate an xhr object
+    const xhr = new XMLHttpRequest();
+
+    // Open the object
+    xhr.open('GET', 'http://dummy.restapiexample.com/api/v1/employees', true);
 
 
-    const  xhr = new XMLHttpRequest();
-
-    xhr.open('GET', 'https://jsonplaceholder.typicode.com/users?utm_source=Mailerlite&utm_medium=E-mail&utm_campaign=Test%20Series&utm_term=2022-08-09', true);
-
-    xhr.onload = function(){
+    // What to do when response is ready
+    xhr.onload = function () {
         if(this.status === 200){
-            console.log(this.responseText);
+            let obj = JSON.parse(this.responseText);
+            console.log(obj);
+            let list = document.getElementById('list');
+            str = "";
+            for (key in obj)
+            {
+                str += `<li>${obj[key].employee_name} </li>`;
+            }
+            list.innerHTML = str;
         }
         else{
-            console.log("some error occured.")
+            console.log("Some error occured")
         }
     }
 
+    // send the request
     xhr.send();
+    console.log("We are done fetching employees!");
+    
 }
