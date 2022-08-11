@@ -33,9 +33,7 @@
         <button class="btn" id="popBtn"><a href = #client-section>FETCH ALL DETAILS</a></button>
         <button class="btn" id="popBtn2"><a href = #client-section>FETCH ALL NAMES</a></button>
         <button class="btn" id="popBtn3"><a href = #client-section>FETCH ALL USERNAMES</a></button>
-        <!-- <button class="btn" id="popBtn4"><a href = #client-section>FETCH ALL EMAILS</a></button>
-        <button class="btn" id="popBtn5"><a href = #client-section>FETCH ALL PHONES</a></button>
-        <button class="btn" id="popBtn6"><a href = #client-section>FETCH ALL WEBSITES</a></button> -->
+      
     </section>
 
     <!-- creating the tech used  -->
@@ -252,80 +250,7 @@ const popBtn3 = document.getElementById('popBtn3');
 }
 
 
-// #004
-const popBtn4 = document.getElementById('popBtn4');
-        popBtn4.addEventListener('click', popHandler4);
 
-        function popHandler4() {
-            
-            // Instantiate an xhr object
-    const xhr = new XMLHttpRequest();
-
-    // Open the object
-    xhr.open('GET', 'https://jsonplaceholder.typicode.com/users?utm_source=Mailerlite&utm_medium=E-mail&utm_campaign=Test%20Series&utm_term=2022-08-09', true);
-
-
-    // What to do when response is ready
-    xhr.onload = function () {
-        if(this.status === 200){
-            const obj = JSON.parse(this.responseText);
-            // document.write(this.responseText);
-            const list = document.getElementById('list');
-            str = " ";
-            for (key in obj)
-            {
-                str += `<li>${obj[key].email}</li>`;
-            }
-            list.innerHTML = str;
-        }
-        else{
-            console.log("Some error occured")
-        }
-    }
-
-    // send the request
-    xhr.send();
-            
-        
-}
-
-
-// #005
-const popBtn5 = document.getElementById('popBtn5');
-        popBtn5.addEventListener('click', popHandler5);
-
-        function popHandler5() {
-            
-            // Instantiate an xhr object
-    const xhr = new XMLHttpRequest();
-
-    // Open the object
-    xhr.open('GET', 'https://jsonplaceholder.typicode.com/users?utm_source=Mailerlite&utm_medium=E-mail&utm_campaign=Test%20Series&utm_term=2022-08-09', true);
-
-
-    // What to do when response is ready
-    xhr.onload = function () {
-        if(this.status === 200){
-            const obj = JSON.parse(this.responseText);
-            // document.write(this.responseText);
-            const list = document.getElementById('list');
-            str = " ";
-            for (key in obj)
-            {
-                str += `<li>${obj[key].phone}</li>`;
-            }
-            list.innerHTML = str;
-        }
-        else{
-            console.log("Some error occured")
-        }
-    }
-
-    // send the request
-    xhr.send();
-            
-        
-}
     </script>
 </body>
 </html>
