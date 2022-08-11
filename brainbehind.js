@@ -7,7 +7,7 @@ function buttonClickHandler(){
 
     const  xhr = new XMLHttpRequest();
 
-    xhr.open('GET', 'nikhil.txt', true);
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/users?utm_source=Mailerlite&utm_medium=E-mail&utm_campaign=Test%20Series&utm_term=2022-08-09', true);
 
     xhr.onload = function(){
         if(this.status === 200){
