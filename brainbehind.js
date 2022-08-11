@@ -8,4 +8,15 @@ function buttonClickHandler(){
     const  xhr = new XMLHttpRequest();
 
     xhr.open('GET', 'nikhil.txt', true);
+
+    xhr.onload = function(){
+        if(this.status === 200){
+            console.log(this.responseText);
+        }
+        else{
+            console.log("some error occured.")
+        }
+    }
+
+    xhr.send();
 }
