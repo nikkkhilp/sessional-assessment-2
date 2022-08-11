@@ -12,6 +12,7 @@
 #home{
     height: 370px; 
     padding: 3px 28px;
+    
 }
 
 #home::before{
