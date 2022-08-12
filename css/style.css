@@ -109,7 +109,7 @@ html{
     display: flex;
 }
 #services .box{ 
-    border: 2px solid brown;
+    border: 2px solid rgb(165, 27, 27);
     padding: 34px;
     margin: 2px 55px;
     border-radius: 28px;
